@@ -71,13 +71,13 @@ $(document).ready(function(){
 		var len = inputvalue('length', 'int');
 		var note = inputvalue('note');
 		if (password == ''){
-			msg('Password cannot be empty.');
+			msg(_('o_passwords_cannot_be_empty'));
 		}
 		else if (password != confirm){
-			msg('Passwords do not match.');
+			msg(_('o_passwords_do_not_match'));
 		}
 		else if (!(len > 0)){
-			msg('Length parameter is wrong. If you don\'t know, type 10.');
+			msg(_('o_len_wrong'));
 		}
 		else {
 			var p = {

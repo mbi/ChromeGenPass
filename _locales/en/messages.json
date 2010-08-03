@@ -1,0 +1,121 @@
+{
+	"lang": {
+		"message": "en"
+	},
+	"chrome_extension_description": {
+		"message": "Generate passwords for websites without any clicks and with an extra portable SuperGenPass engine."
+	},
+	"chrome_extension_name": {
+		"message": "ChromeGenPass"
+	},
+	"chrome_extension_page_action_title": {
+		"message": "Generate SuperGenPass passwords"
+	},
+	
+	"layout": {
+		"message": "Make sure that you have the correct layout turned on."
+	},
+	"you_have_no_passwords_saved": {
+		"message": "You have no passwords saved."
+	},
+	"add_passwords_on_the": {
+		"message": "Add passwords on the"
+	},
+	"options_page": {
+		"message": "options page"
+	},
+	
+	"try_again": {
+		"message": "Try again"
+	},
+	"prompt_password_password": {
+		"message": "Password"
+	},
+	"prompt_password_is_incorrect": {
+		"message": "is incorrect. Perhaps you have made a mistake?"
+	},
+	"prompt_password_is_locked": {
+		"message": "is locked."
+	},
+	"prompt_password_please_unlock": {
+		"message": "Please unlock it by entering it in the field below:"
+	},
+	
+	"passwords_updated_to": {
+		"message": "Passwords updated to"
+	},
+	
+	"updated_to": {
+		"message": "Updated to"
+	},
+	
+	"help": {
+		"message": "Help"
+	},
+	"unexpected_error": {
+		"message": "Unexpected error"
+	},
+	
+	"page_action_new_code": {
+		"message": "..."
+	},
+	"page_action_password": {
+		"message": "Password"
+	},
+	"page_action_help": {
+		"message": "
+			<p>
+				Use SuperGenPass easily!
+			<p>
+				Click on&nbsp;your password.
+				If your password is&nbsp;locked, enter it to&nbsp;unlock.
+			<p>
+				Click on&nbsp;&lsquo;...&rsquo; to&nbsp;use a&nbsp;new password.
+			<p>
+				Click on&nbsp;domain to&nbsp;change&nbsp;it.
+			<p>
+				Click on&nbsp;<img src=\"../img/silk/control_fastforward.png\" alt=\"[&gt;&gt;]\">
+				to fill the page with generated password.
+		"
+	},
+	
+	"o_passwords_cannot_be_empty": {
+		"message": "Password cannot be empty."
+	},
+	"o_passwords_do_not_match": {
+		"message": "Passwords do not match."
+	},
+	"o_len_wrong": {
+		"message": "Length parameter is wrong. If you don't know, type 10."
+	},
+	"o_add_new": {
+		"message": "Add new"
+	},
+	"o_help": {
+		"message": "Help"
+	},
+	"o_how_to_use": {
+		"message": ""
+	},
+	"": {
+		"message": ""
+	},
+	"": {
+		"message": ""
+	},
+	"": {
+		"message": ""
+	},
+	"": {
+		"message": ""
+	},
+	"": {
+		"message": ""
+	},
+	"": {
+		"message": ""
+	},
+	"": {
+		"message": ""
+	}
+}

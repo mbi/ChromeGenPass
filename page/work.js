@@ -117,7 +117,9 @@ function insert_password(field, password, note)
 			'color': 'black'
 		});
 
-	Popup.hide().stop().state('updated-to').move(field).text('Updated to ' + note).show('slow').hide_in(3000, 'slow');
+	Popup.hide().stop().state('updated-to').move(field)
+		.text(chrome.i18n.getMessage('updated_to') + ' ' + note)
+		.show('slow').hide_in(3000, 'slow');
 
 	// Revert if entry has been changed
 	var test = setInterval(function(){

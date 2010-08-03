@@ -76,7 +76,7 @@ var Popup_init = function() {
 			this
 				.hide().stop()
 				.state('layout')
-				.text('Make sure that you have the correct layout turned on.')
+				.text(chrome.i18n.getMessage('layout'))
 				.move(field).show('fast');
 			this.hide_in(1500, 'slow');
 		},
@@ -130,10 +130,12 @@ var Popup_init = function() {
 				if (txt.length == 0)
 				{
 					url = chrome.extension.getURL('options/options.html');
-					html = '<em>ChromeGenPass</em><br>';
-					html += 'You have no passwords saved.<br>';
-					html += 'Add passwords on the ';
-					html += '<a href="'+url+'#settings" style="color:white" target="_blank">options page</a>.';
+					html = '<em>'+ chrome.i18n.getMessage('chrome_extension_name') +'</em><br>';
+					html += chrome.i18n.getMessage('you_have_no_passwords_saved') + '<br>';
+					html += chrome.i18n.getMessage('add_passwords_on_the') + ' ';
+					html += '<a href="'+url+'#settings" style="color:white" target="_blank">';
+					html += chrome.i18n.getMessage('option_page');
+					html += '</a>.';
 					el.html(html);
 				}
 				else

@@ -1,8 +1,10 @@
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>ChromeGenPass</title>
 		<link rel="stylesheet" href="../css/style.css">
 		<link rel="stylesheet" href="options.css">
+		<script src="../js/lang.js"></script>
 	</head>
 	<body>
 		<div id="viewbox">
@@ -13,7 +15,7 @@
 					<img src="../img/silk/cross.png" alt="[delete]">
 				</li>
 			</ol>
-			<h1>Add new</h1>
+			<h1><script>l('o_add_new');</script></h1>
 			<form>
 				<input type="password" name="password" placeholder="Password" required>
 				<input type="password" name="confirm" placeholder="Confirm the password" required>
@@ -23,9 +25,9 @@
 			</form>
 			<ol id="status">
 			</ol>
-			<h1 id="help-h1"><a href="#help">Help</a></h1>
+			<h1 id="help-h1"><a href="#help"><script>l('o_help');</script></a></h1>
 			<div id="help">
-				<h2>How to use</h2>
+				<h2><script>l('o_how_to_use');</script></h2>
 				<ol>
 					<li>
 						<p>Store master password on this options page.

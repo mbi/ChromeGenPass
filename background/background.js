@@ -86,13 +86,15 @@ function prompt_password(password, second_attempt)
 	var txt = '';
 	if (second_attempt)
 	{
-		txt += 'Password "' + password['note'] + '" is incorrect. Perhaps you have made a mistake?\n\n';
-		txt += 'Try again:';
+		txt += chrome.i18n.getMessage('prompt_password_password') + ' "';
+		txt += password['note'] + '" ' + chrome.i18n.getMessage('prompt_password_is_incorrect') + '\n\n';
+		txt += chrome.i18n.getMessage('try_again') + ':';
 	}
 	else
 	{
-		txt += 'Password "' + password['note'] + '" is locked.\n';
-		txt += 'Please unlock it by entering it in the field below:';
+		txt += chrome.i18n.getMessage('prompt_password_password') + ' "';
+		txt += password['note'] + '" '+ chrome.i18n.getMessage('prompt_password_is_locked') +'\n';
+		txt += chrome.i18n.getMessage('prompt_password_please_unlock');
 	}
 	return prompt(txt)
 }

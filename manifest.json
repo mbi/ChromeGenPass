@@ -1,8 +1,8 @@
 {
-	"name": "ChromeGenPass",
+	"name": "__MSG_chrome_extension_name__",
 	"version": "3.1",
 
-	"description": "Generate passwords for websites without any clicks and with an extra portable SuperGenPass engine.",
+	"description": "__MSG_chrome_extension_description__",
 	"icons": {
 		"16": "img/ktouch16.png",
 		"48": "img/ktouch48.png",
@@ -19,10 +19,13 @@
 	],
 	"page_action": {
 		"default_icon": "img/supergenpass.png",
-		"default_title": "Generate SuperGenPass passwords",
+		"default_title": "__MSG_chrome_extension_page_action_title__",
 		"default_popup": "pageAction/pageAction.html"
 	},
 	"permissions": [
 		"tabs", "http://*/*", "https://*/*"
-	]
+	],
+	
+	"default_locale": "en"
+	
 }
