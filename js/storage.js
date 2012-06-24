@@ -22,26 +22,64 @@ var storage = (function(){
 		whitelist: []
 	};
 
-	var load = function(){ settings = JSON.parse(localStorage.settings); },
-		save = function(){ localStorage.settings = JSON.stringify(settings); };
+	var load = function(){
+		chrome.storage.sync.get('settings', function(s){
+			if ('settings' in s) {
+				settings = s.settings;
+			}
+		});
+	};
 
-	if (!('settings' in localStorage))
-		save();
+	/**
+	 * Merge two arrays, ignoring identical elements
+	 * @param callback key Identity function of an element
+	 */
+	var merge = function(one, two, key) {
+		key = key || function(i){ return i; };
+		var names = one.map(key);
+		two.forEach(function(p){
+			if (names.indexOf(key(p)) < 0) {
+				one.passwords.push(p);
+			}
+		});
+		return one;
+	};
+
+	var save = function(){ chrome.storage.sync.set({ settings: settings }); };
 
 	load();
 
 	// Retrieve legacy passwords
 	if ('passwords' in localStorage && localStorage.passwords.indexOf('//CGPSEP/$$}}//') > -1) {
+		var t = [];
 		localStorage.passwords.split('//CGPSEP2/$$}}//').forEach(function(password){
 			item = password.split('//CGPSEP/$$}}//');
-			settings.passwords.push({
+			t.push({
 				'note': item[0],
 				'len': item[1],
 				'hash': item[2]
 			});
 		});
+		settings.passwords = merge(settings.passwords, t, function(p) {
+			return p.note + p.len + p.hash;
+		});
 		save();
 		delete localStorage.passwords;
+	}
+
+	// Retrieve newer legacy settings
+	if ('settings' in localStorage) {
+		var s = JSON.parse(localStorage.settings);
+		if ('passwords' in s) {
+			settings.passwords = merge(settings.passwords, s.passwords, function(p) {
+				return p.note + p.len + p.hash;
+			});
+		}
+		if ('whitelist' in s) {
+			settings.whitelist = merge(settings.whitelist, s.whitelist);
+		}
+		save();
+		delete localStorage.settings;
 	}
 
 	var api = function(data){
